@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roof Yard | Management Admin Panel</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍸</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Admin Stylesheet -->
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- LOGIN SCREEN OVERLAY -->
+    <div class="login-screen-wrapper" id="login-screen">
+        <div class="login-card">
+            <div class="login-logo-box">
+                <i class="fa-solid fa-champagne-glasses"></i>
+            </div>
+            <h2>Roof Yard Admin</h2>
+            <p>Enter your management credentials to access live bookings and menu controls.</p>
+
+            <div class="login-demo-creds">
+                <i class="fa-solid fa-key" style="color: var(--gold-primary);"></i> <strong>Demo Credentials:</strong><br>
+                Email: <code>admin@roofyard.com</code><br>
+                Password: <code>admin123</code>
+            </div>
+
+            <form class="login-form" id="admin-login-form">
+                <div class="form-field">
+                    <label for="login-email"><i class="fa-solid fa-envelope"></i> Email Address</label>
+                    <input type="email" id="login-email" value="admin@roofyard.com" required>
+                </div>
+                <div class="form-field">
+                    <label for="login-password"><i class="fa-solid fa-lock"></i> Password</label>
+                    <input type="password" id="login-password" value="admin123" required>
+                </div>
+                <button type="submit" class="btn-adm btn-adm-gold" style="width: 100%; margin-top: 8px;">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i> Login to Dashboard
+                </button>
+            </form>
+
+            <div style="margin-top: 20px;">
+                <a href="index.html" style="font-size: 0.85rem; color: var(--gold-light); text-decoration: none;">
+                    <i class="fa-solid fa-arrow-left"></i> Return to Public Website
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN ADMIN DASHBOARD LAYOUT -->
+    <div class="admin-layout">
+        <!-- Sidebar Overlay for Mobile -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" id="admin-sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-brand-icon">
+                    <i class="fa-solid fa-champagne-glasses"></i>
+                </div>
+                <div class="sidebar-brand-text">
+                    <h3>Roof Yard</h3>
+                    <span>Operations Hub</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-item active" data-tab="overview">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </div>
+                <div class="nav-item" data-tab="reservations">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <span>Reservations</span>
+                    <span class="nav-badge" id="sidebar-res-count" style="display: none;">0</span>
+                </div>
+                <div class="nav-item" data-tab="menu">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>Menu Catalog</span>
+                </div>
+                <div class="nav-item" data-tab="orders">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Live Orders</span>
+                </div>
+                <div class="nav-item" data-tab="reviews">
+                    <i class="fa-regular fa-star"></i>
+                    <span>Guest Reviews</span>
+                </div>
+                <div class="nav-item" data-tab="settings">
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>Settings</span>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="index.html" target="_blank" class="btn-adm btn-adm-secondary btn-adm-sm" style="text-decoration: none;">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> View Live Site
+                </a>
+                <button class="btn-adm btn-adm-secondary btn-adm-sm" onclick="AdminApp.resetAllDemoData()">
+                    <i class="fa-solid fa-rotate-left"></i> Reset Demo Data
+                </button>
+                <button class="btn-adm btn-adm-danger btn-adm-sm" id="admin-logout-btn">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="admin-main">
+            <!-- Topbar -->
+            <header class="admin-topbar">
+                <div class="topbar-left">
+                    <button class="action-icon-btn" id="admin-mobile-toggle" style="display: none;" title="Toggle Menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <h2 class="topbar-title" id="active-tab-title">Dashboard</h2>
+                </div>
+
+                <div class="topbar-right">
+                    <button class="btn-adm btn-adm-gold btn-adm-sm" onclick="AdminApp.openAddDishModal()">
+                        <i class="fa-solid fa-plus"></i> Add New Dish
+                    </button>
+                    <div class="user-profile">
+                        <div class="user-avatar">M</div>
+                        <div style="font-size: 0.85rem;">
+                            <div style="font-weight: 600; color: #fff;">Manager</div>
+                            <div style="font-size: 0.72rem; color: var(--gold-light);">Roof Yard Admin</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Body -->
+            <div class="admin-body">
+
+                <!-- =======================================================
+                     TAB 1: OVERVIEW DASHBOARD
+                     ======================================================= -->
+                <div class="tab-pane active" id="tab-overview">
+                    <!-- KPI Metric Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <span>Table Bookings</span>
+                                <h3 id="stat-total-bookings">0</h3>
+                                <p id="stat-pending-badge" style="color: var(--warning);">0 Pending Action</p>
+                            </div>
+                            <div class="stat-icon icon-amber">
+                                <i class="fa-regular fa-calendar-check"></i>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <span>Total Orders</span>
+                                <h3 id="stat-total-orders">0</h3>
+                                <p style="color: var(--info);">Dine-in & Takeaway</p>
+                            </div>
+                            <div class="stat-icon icon-blue">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <span>Total Revenue</span>
+                                <h3 id="stat-total-revenue">Rs. 0</h3>
+                                <p style="color: var(--success);"><i class="fa-solid fa-arrow-trend-up"></i> Live calculated</p>
+                            </div>
+                            <div class="stat-icon icon-green">
+                                <i class="fa-solid fa-coins"></i>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-info">
+                                <span>Menu Catalog</span>
+                                <h3 id="stat-total-menu">0</h3>
+                                <p id="stat-avg-rating" style="color: var(--gold-primary);">4.9 ★ Rating</p>
+                            </div>
+                            <div class="stat-icon icon-gold">
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Action Banner -->
+                    <div class="action-banner">
+                        <div class="action-banner-text">
+                            <h4>Rooftop Terrace Status: Open & Accepting Guests</h4>
+                            <p>Golden Hour Sunset Sessions are active. Instant sync enabled across all browser devices.</p>
+                        </div>
+                        <div class="action-banner-btns">
+                            <button class="btn-adm btn-adm-gold btn-adm-sm" onclick="AdminApp.openAddDishModal()">
+                                <i class="fa-solid fa-plus"></i> New Dish
+                            </button>
+                            <a href="index.html#reservation" target="_blank" class="btn-adm btn-adm-secondary btn-adm-sm" style="text-decoration: none;">
+                                <i class="fa-solid fa-eye"></i> Booking Page
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Recent Reservations in Dashboard -->
+                    <div class="table-panel">
+                        <div class="table-header">
+                            <div class="table-title-box">
+                                <h3>Recent Table Reservations</h3>
+                                <p>Latest customer booking requests submitted via website</p>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Booking ID</th>
+                                        <th>Guest Name</th>
+                                        <th>Schedule</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="overview-recent-reservations">
+                                    <!-- Populated dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- =======================================================
+                     TAB 2: RESERVATIONS MANAGEMENT
+                     ======================================================= -->
+                <div class="tab-pane" id="tab-reservations">
+                    <div class="table-panel">
+                        <div class="table-header">
+                            <div class="table-title-box">
+                                <h3>Manage Table Reservations</h3>
+                                <p>Approve, decline, or reach out to dining guests via WhatsApp</p>
+                            </div>
+                            <div class="table-filter-bar">
+                                <button class="btn-adm btn-adm-gold btn-adm-sm res-filter-btn" data-status="all">All</button>
+                                <button class="btn-adm btn-adm-secondary btn-adm-sm res-filter-btn" data-status="pending">Pending</button>
+                                <button class="btn-adm btn-adm-secondary btn-adm-sm res-filter-btn" data-status="confirmed">Confirmed</button>
+                                <button class="btn-adm btn-adm-secondary btn-adm-sm res-filter-btn" data-status="cancelled">Cancelled</button>
+                                <div class="search-input-box">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <input type="text" id="res-search-input" placeholder="Search by name, phone, ID...">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Guest Details</th>
+                                        <th>Date & Time</th>
+                                        <th>Party & Area</th>
+                                        <th>Occasion & Notes</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="reservations-table-body">
+                                    <!-- Populated dynamically via admin.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- =======================================================
+                     TAB 3: MENU MANAGEMENT
+                     ======================================================= -->
+                <div class="tab-pane" id="tab-menu">
+                    <div class="table-panel">
+                        <div class="table-header">
+                            <div class="table-title-box">
+                                <h3>Roof Yard Menu Catalog</h3>
+                                <p>Create, update, and toggle dishes available on the customer website</p>
+                            </div>
+                            <div class="table-filter-bar">
+                                <select id="menu-cat-filter" style="padding: 8px 12px; background: rgba(255,255,255,0.05); border: 1px solid var(--adm-border); border-radius: 8px; color: #fff; font-size: 0.85rem;">
+                                    <option value="all">All Categories</option>
+                                    <option value="starters">Starters & Tapas</option>
+                                    <option value="pizza">Woodfired Pizza</option>
+                                    <option value="grill">Rooftop Grills</option>
+                                    <option value="mains">Gourmet Mains</option>
+                                    <option value="drinks">Artisan Drinks</option>
+                                    <option value="desserts">Decadent Desserts</option>
+                                </select>
+                                <div class="search-input-box">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <input type="text" id="menu-admin-search" placeholder="Search dish name...">
+                                </div>
+                                <button class="btn-adm btn-adm-gold btn-adm-sm" onclick="AdminApp.openAddDishModal()">
+                                    <i class="fa-solid fa-plus"></i> Add Dish
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Photo</th>
+                                        <th>Dish Title</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Dietary</th>
+                                        <th>Available</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="menu-table-body">
+                                    <!-- Populated dynamically via admin.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- =======================================================
+                     TAB 4: LIVE ORDERS MANAGEMENT
+                     ======================================================= -->
+                <div class="tab-pane" id="tab-orders">
+                    <div class="table-panel">
+                        <div class="table-header">
+                            <div class="table-title-box">
+                                <h3>Kitchen Food Orders</h3>
+                                <p>Track orders placed from table trays and takeaway checkout</p>
+                            </div>
+                            <div class="table-filter-bar">
+                                <button class="btn-adm btn-adm-gold btn-adm-sm order-filter-btn" data-status="all">All</button>
+                                <button class="btn-adm btn-adm-secondary btn-adm-sm order-filter-btn" data-status="received">Received</button>
+                                <button class="btn-adm btn-adm-secondary btn-adm-sm order-filter-btn" data-status="preparing">Preparing</button>
+                                <button class="btn-adm btn-adm-secondary btn-adm-sm order-filter-btn" data-status="ready">Ready</button>
+                                <button class="btn-adm btn-adm-secondary btn-adm-sm order-filter-btn" data-status="completed">Completed</button>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order Token</th>
+                                        <th>Customer Info</th>
+                                        <th>Type & Seating</th>
+                                        <th>Dishes Ordered</th>
+                                        <th>Total</th>
+                                        <th>Kitchen Status</th>
+                                        <th>Bill Receipt</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="orders-table-body">
+                                    <!-- Populated dynamically via admin.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- =======================================================
+                     TAB 5: GUEST REVIEWS MANAGEMENT
+                     ======================================================= -->
+                <div class="tab-pane" id="tab-reviews">
+                    <div class="table-panel">
+                        <div class="table-header">
+                            <div class="table-title-box">
+                                <h3>Customer Testimonials</h3>
+                                <p>Review feedback published on the homepage</p>
+                            </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Guest Name</th>
+                                        <th>Rating</th>
+                                        <th>Review Description</th>
+                                        <th>Date</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-reviews-table-body">
+                                    <!-- Populated dynamically via admin.js -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- =======================================================
+                     TAB 6: SETTINGS MANAGEMENT
+                     ======================================================= -->
+                <div class="tab-pane" id="tab-settings">
+                    <div class="table-panel" style="max-width: 800px;">
+                        <div class="table-header">
+                            <div class="table-title-box">
+                                <h3>Restaurant Configuration</h3>
+                                <p>Update operational hours, announcements and contact details displayed on the public website</p>
+                            </div>
+                        </div>
+
+                        <form id="restaurant-settings-form" style="display: flex; flex-direction: column; gap: 18px; margin-top: 10px;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                <div class="form-field">
+                                    <label>Restaurant Name</label>
+                                    <input type="text" id="set-restaurant-name" required>
+                                </div>
+                                <div class="form-field">
+                                    <label>Tagline</label>
+                                    <input type="text" id="set-tagline">
+                                </div>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                <div class="form-field">
+                                    <label>Phone / WhatsApp Hotline</label>
+                                    <input type="text" id="set-phone" required>
+                                </div>
+                                <div class="form-field">
+                                    <label>Reservation Email</label>
+                                    <input type="email" id="set-email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-field">
+                                <label>Operating Hours</label>
+                                <input type="text" id="set-hours" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label>Physical Rooftop Address</label>
+                                <input type="text" id="set-address" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label>Top Banner Announcement (Live Notice)</label>
+                                <textarea id="set-announcement" rows="2"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-adm btn-adm-gold" style="align-self: flex-start; margin-top: 10px;">
+                                <i class="fa-solid fa-floppy-disk"></i> Save & Apply Changes
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- MODAL: ADD DISH -->
+    <div class="adm-modal-overlay" id="add-dish-modal">
+        <div class="adm-modal-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 style="font-size: 1.4rem; color: var(--gold-light);">Add New Culinary Creation</h3>
+                <button class="adm-modal-close" style="background:none; border:none; color:var(--text-muted); font-size:1.3rem; cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <form id="add-dish-form" style="display: flex; flex-direction: column; gap: 14px;">
+                <div class="form-field">
+                    <label>Dish Name *</label>
+                    <input type="text" id="add-dish-name" placeholder="e.g. Saffron Chilean Seabass" required>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                    <div class="form-field">
+                        <label>Category *</label>
+                        <select id="add-dish-cat">
+                            <option value="starters">Starters & Tapas</option>
+                            <option value="pizza">Woodfired Pizza</option>
+                            <option value="grill">Rooftop Grills</option>
+                            <option value="mains">Gourmet Mains</option>
+                            <option value="drinks">Artisan Drinks</option>
+                            <option value="desserts">Decadent Desserts</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label>Price (Rs.) *</label>
+                        <input type="number" id="add-dish-price" placeholder="e.g. 2450" required>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                    <div class="form-field">
+                        <label>Dietary Type *</label>
+                        <select id="add-dish-dietary">
+                            <option value="veg">Vegetarian</option>
+                            <option value="non-veg">Non-Vegetarian</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label>Badge Tag (Optional)</label>
+                        <input type="text" id="add-dish-badge" placeholder="e.g. Chef's Special / Bestseller">
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label>Image URL (Unsplash or direct image link)</label>
+                    <input type="url" id="add-dish-img" placeholder="https://images.unsplash.com/...">
+                </div>
+
+                <div class="form-field">
+                    <label>Description & Ingredients *</label>
+                    <textarea id="add-dish-desc" rows="3" placeholder="Describe the ingredients, cooking method, and flavors..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-adm btn-adm-gold" style="margin-top: 10px;">
+                    <i class="fa-solid fa-plus"></i> Publish to Roof Yard Menu
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: EDIT DISH -->
+    <div class="adm-modal-overlay" id="edit-dish-modal">
+        <div class="adm-modal-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 style="font-size: 1.4rem; color: var(--gold-light);">Edit Menu Item</h3>
+                <button class="adm-modal-close" style="background:none; border:none; color:var(--text-muted); font-size:1.3rem; cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <form id="edit-dish-form" style="display: flex; flex-direction: column; gap: 14px;">
+                <input type="hidden" id="edit-dish-id">
+
+                <div class="form-field">
+                    <label>Dish Name *</label>
+                    <input type="text" id="edit-dish-name" required>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                    <div class="form-field">
+                        <label>Category *</label>
+                        <select id="edit-dish-cat">
+                            <option value="starters">Starters & Tapas</option>
+                            <option value="pizza">Woodfired Pizza</option>
+                            <option value="grill">Rooftop Grills</option>
+                            <option value="mains">Gourmet Mains</option>
+                            <option value="drinks">Artisan Drinks</option>
+                            <option value="desserts">Decadent Desserts</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label>Price (Rs.) *</label>
+                        <input type="number" id="edit-dish-price" required>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                    <div class="form-field">
+                        <label>Dietary Type</label>
+                        <select id="edit-dish-dietary">
+                            <option value="veg">Vegetarian</option>
+                            <option value="non-veg">Non-Vegetarian</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label>Badge Tag</label>
+                        <input type="text" id="edit-dish-badge">
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label>Image URL</label>
+                    <input type="url" id="edit-dish-img">
+                </div>
+
+                <div class="form-field">
+                    <label>Description & Ingredients</label>
+                    <textarea id="edit-dish-desc" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn-adm btn-adm-gold" style="margin-top: 10px;">
+                    <i class="fa-solid fa-check"></i> Save Dish Updates
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: VIEW BILL RECEIPT -->
+    <div class="adm-modal-overlay" id="order-detail-modal">
+        <div class="adm-modal-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 style="font-size: 1.3rem; color: var(--gold-light);">Order Token & Receipt</h3>
+                <button class="adm-modal-close" style="background:none; border:none; color:var(--text-muted); font-size:1.3rem; cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div id="order-bill-content">
+                <!-- Injected via admin.js -->
+            </div>
+
+            <div style="margin-top: 20px; display: flex; gap: 10px;">
+                <button class="btn-adm btn-adm-gold" style="flex:1;" onclick="window.print()">
+                    <i class="fa-solid fa-print"></i> Print Bill
+                </button>
+                <button class="btn-adm btn-adm-secondary adm-modal-close" style="flex:1;">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

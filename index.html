@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roof Yard | Aesthetic Rooftop Dining & Lounge</title>
+    <meta name="description" content="Experience elevated dining under the open sky at Roof Yard. Artisanal woodfired pizzas, premium charcoal grills, handcrafted mocktails, and panoramic sunset skyline views.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍸</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="announcement-bar">
+        <div class="announcement-content">
+            <div class="announcement-text">
+                <i class="fa-solid fa-sparkles" style="color: var(--gold-primary);"></i>
+                <span id="announcement-banner-text">✨ Golden Hour Sunset Session starts 5:30 PM. Live Acoustic Performance this Friday & Saturday!</span>
+            </div>
+            <div class="announcement-contacts">
+                <span><i class="fa-regular fa-clock"></i> 4:30 PM - 2:00 AM</span>
+                <a href="tel:+923007663927" id="header-phone-link"><i class="fa-solid fa-phone"></i> +92 300 ROOFYARD</a>
+                <a href="admin.html" class="admin-portal-pill"><i class="fa-solid fa-lock"></i> Staff Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <header class="navbar" id="main-navbar">
+        <div class="container nav-container">
+            <!-- Brand Logo -->
+            <a href="#home" class="brand-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-champagne-glasses"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">Roof Yard</span>
+                    <span class="logo-tagline">Rooftop Dining & Lounge</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav>
+                <ul class="nav-menu" id="primary-nav-menu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">Our Story</a></li>
+                    <li><a href="#menu" class="nav-link">Menu</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#reservation" class="nav-link">Reservations</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Actions & Cart -->
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-toggle-btn" title="View Cart / Tray">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count" id="cart-badge-count" style="display: none;">0</span>
+                </button>
+                <a href="#reservation" class="btn btn-primary btn-sm">
+                    <i class="fa-regular fa-calendar-check"></i> Book Table
+                </a>
+                <button class="mobile-toggle" id="mobile-nav-toggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80" alt="Roof Yard Aesthetic Rooftop Ambiance" class="hero-img">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-star"></i> Voted Top Aesthetic Rooftop Dining
+                </div>
+                <h1 class="hero-title">
+                    Elevated Dining <span>Under The Open Sky</span>
+                </h1>
+                <p class="hero-desc">
+                    Where culinary mastery meets panoramic twilight skylines, glowing firepits, artisanal mocktails, and unforgettable golden hours.
+                </p>
+                <div class="hero-cta">
+                    <a href="#reservation" class="btn btn-primary">
+                        <i class="fa-solid fa-chair"></i> Reserve a Table
+                    </a>
+                    <a href="#menu" class="btn btn-secondary">
+                        <i class="fa-solid fa-book-open"></i> Explore Full Menu
+                    </a>
+                </div>
+
+                <!-- Highlights Bar -->
+                <div class="hero-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fa-solid fa-cloud-sun"></i></div>
+                        <div>
+                            <h4>Sunset Skyline</h4>
+                            <p>360° Open Terrace View</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fa-solid fa-fire-burner"></i></div>
+                        <div>
+                            <h4>Woodfired & Charcoal</h4>
+                            <p>Handcrafted Artisan Dishes</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fa-solid fa-guitar"></i></div>
+                        <div>
+                            <h4>Live Acoustic</h4>
+                            <p>Weekends 8:30 PM Onwards</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon"><i class="fa-solid fa-award"></i></div>
+                        <div>
+                            <h4>4.9 ★ Rating</h4>
+                            <p>1,200+ Verified Diners</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT & AMBIANCE STORY SECTION -->
+    <section class="experience-section" id="about">
+        <div class="container">
+            <div class="experience-grid">
+                <!-- Image Collage -->
+                <div class="experience-images">
+                    <div class="exp-img-box exp-img-1">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80" alt="Roof Yard Charcoal Grills & Steaks">
+                    </div>
+                    <div class="exp-img-box exp-img-2">
+                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80" alt="Roof Yard Signature Beverage">
+                    </div>
+                    <div class="exp-img-box exp-img-3">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" alt="Woodfired Pizza Art">
+                    </div>
+                    <div class="exp-floating-badge">
+                        <i class="fa-solid fa-seedling"></i>
+                        <div>
+                            <h4>Botanical Terrace</h4>
+                            <span>Surrounded by Lush Flora</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story Details -->
+                <div class="experience-content">
+                    <span class="section-tag"><i class="fa-solid fa-feather"></i> The Roof Yard Story</span>
+                    <h2 class="section-title">An Oasis Suspended Above The City</h2>
+                    <p style="margin-bottom: 20px;">
+                        Roof Yard was born from a singular passion: to create an enchanting rooftop escape where serene greenery, warm fairy lights, and culinary sophistication converge.
+                    </p>
+                    <p>
+                        Whether you are sipping cold-pressed botanicals during the golden hour sunset or savoring prime Australian ribeyes beneath starlit night skies, every single moment at Roof Yard is meticulously curated for romance, celebration, and pure serenity.
+                    </p>
+
+                    <!-- Features 2x2 Grid -->
+                    <div class="experience-features">
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+                            <h4>72-Hr Sourdough</h4>
+                            <p>Naturally fermented wood-fired crusts baked in stone ovens at 450°C.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-lemon"></i></div>
+                            <h4>Zero-Proof Bar</h4>
+                            <p>Artisanal mocktails, cold-brews, and smoked botanical infusions.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-fire"></i></div>
+                            <h4>Cozy Firepits</h4>
+                            <p>Warm ambient outdoor heaters and intimate terrace seating.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fa-solid fa-music"></i></div>
+                            <h4>Sensory Ambiance</h4>
+                            <p>Mellow jazz, acoustic soul, and gentle evening breezes.</p>
+                        </div>
+                    </div>
+
+                    <a href="#menu" class="btn btn-outline">
+                        <i class="fa-solid fa-utensils"></i> Discover The Cuisine
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIGITAL MENU SECTION -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag"><i class="fa-solid fa-book-open"></i> Culinary Masterpieces</span>
+                <h2 class="section-title">The Roof Yard Menu</h2>
+                <p class="section-subtitle">
+                    Crafted with fresh farm-to-table botanicals, premium cuts, and exquisite flavors designed for shared indulgence.
+                </p>
+            </div>
+
+            <!-- Controls (Search + Categories + Dietary) -->
+            <div class="menu-controls">
+                <div class="menu-search-wrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="menu-search-input" placeholder="Search dishes, drinks, ingredients...">
+                </div>
+
+                <div class="menu-categories">
+                    <button class="category-btn active" data-category="all">All Dishes</button>
+                    <button class="category-btn" data-category="starters">Starters & Tapas</button>
+                    <button class="category-btn" data-category="pizza">Woodfired Pizza</button>
+                    <button class="category-btn" data-category="grill">Rooftop Grills</button>
+                    <button class="category-btn" data-category="mains">Gourmet Mains</button>
+                    <button class="category-btn" data-category="drinks">Artisan Drinks</button>
+                    <button class="category-btn" data-category="desserts">Decadent Desserts</button>
+                </div>
+
+                <div class="dietary-filters">
+                    <span>Filter:</span>
+                    <button class="dietary-btn active" data-dietary="all">All</button>
+                    <button class="dietary-btn" data-dietary="veg">
+                        <span class="dietary-dot dot-veg"></span> Vegetarian
+                    </button>
+                    <button class="dietary-btn" data-dietary="non-veg">
+                        <span class="dietary-dot dot-nonveg"></span> Non-Veg
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dynamic Menu Grid Container -->
+            <div class="menu-grid" id="menu-items-grid">
+                <!-- Injected via js/app.js from RoofYardDB -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SPECIAL OFFER SUNSET HOUR BANNER -->
+    <section class="offer-banner-section" id="experience">
+        <div class="container">
+            <div class="offer-card">
+                <div class="offer-info">
+                    <span class="section-tag"><i class="fa-solid fa-sun"></i> Daily Sunset Ritual</span>
+                    <h2>Golden Hour At The Roof Yard</h2>
+                    <p>
+                        Join us between 5:00 PM and 7:00 PM for complimentary table sparklers and 20% off all handcrafted mocktails & tapas starters while the sky turns amber and gold.
+                    </p>
+                </div>
+                <div>
+                    <a href="#reservation" class="btn btn-primary" style="white-space: nowrap;">
+                        <i class="fa-solid fa-calendar-plus"></i> Claim Sunset Table
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TABLE RESERVATION SECTION -->
+    <section class="reservation-section" id="reservation">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 40px;">
+                <span class="section-tag"><i class="fa-solid fa-champagne-glasses"></i> Reserve In Advance</span>
+                <h2 class="section-title">Book Your Rooftop Table</h2>
+                <p class="section-subtitle">
+                    Select your preferred terrace zone and enjoy seamless priority seating with panoramic city skyline views.
+                </p>
+            </div>
+
+            <div class="reservation-wrapper">
+                <!-- Left: Information & Seating Zones -->
+                <div class="reservation-info">
+                    <div>
+                        <h3 style="font-size: 1.8rem; margin-bottom: 12px; color: var(--gold-light);">Elevated Atmosphere</h3>
+                        <p style="font-size: 0.95rem;">
+                            Advance reservations are highly recommended for sunset hours and weekend evenings. We hold reserved tables for up to 15 minutes past booking time.
+                        </p>
+
+                        <ul class="res-perks">
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>No reservation fee or deposit required for regular parties up to 6.</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Complimentary celebration candlelight & cake plating for anniversaries & birthdays.</span>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Heated dining pods & warm blankets available during cool breezy nights.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Seating Areas Selector Preview -->
+                    <div>
+                        <h4 style="font-size: 1.1rem; color: var(--gold-light); margin-bottom: 12px;">
+                            Click to Select Seating Zone:
+                        </h4>
+                        <div class="seating-preview-grid">
+                            <div class="seating-card" data-area="Skyline Terrace Deck">
+                                <h5><i class="fa-solid fa-city" style="color: var(--gold-primary);"></i> Skyline Deck</h5>
+                                <p>Unobstructed panoramic city skyline view right by the balcony glass edge.</p>
+                            </div>
+                            <div class="seating-card" data-area="Sunset Cabana VIP">
+                                <h5><i class="fa-solid fa-couch" style="color: var(--gold-primary);"></i> Sunset Cabana</h5>
+                                <p>Plush curtained booth with private ambient lighting & soft loungers.</p>
+                            </div>
+                            <div class="seating-card" data-area="Greenhouse Pergola Lounge">
+                                <h5><i class="fa-solid fa-leaf" style="color: var(--gold-primary);"></i> Pergola Lounge</h5>
+                                <p>Surrounded by hanging cascading plants, fairy lights & wooden arches.</p>
+                            </div>
+                            <div class="seating-card" data-area="Fireplace Cozy Corner">
+                                <h5><i class="fa-solid fa-fire" style="color: var(--gold-primary);"></i> Fireplace Corner</h5>
+                                <p>Intimate seating beside the warm glowing outdoor stone fireplace.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Interactive Booking Form -->
+                <div class="reservation-form-card">
+                    <h3>Confirm Details</h3>
+                    <p>Instant digital confirmation & booking ticket generated.</p>
+
+                    <form class="res-form" id="table-reservation-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="res-name"><i class="fa-solid fa-user"></i> Full Name *</label>
+                                <input type="text" id="res-name" placeholder="e.g. Daniyal Malik" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="res-phone"><i class="fa-solid fa-phone"></i> WhatsApp / Phone *</label>
+                                <input type="tel" id="res-phone" placeholder="e.g. +92 300 1234567" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="res-email"><i class="fa-solid fa-envelope"></i> Email Address</label>
+                                <input type="email" id="res-email" placeholder="e.g. daniyal@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="res-guests"><i class="fa-solid fa-users"></i> Number of Guests *</label>
+                                <select id="res-guests" required>
+                                    <option value="2">2 Guests (Couple / Date)</option>
+                                    <option value="1">1 Guest (Solo Table)</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4" selected>4 Guests (Family / Friends)</option>
+                                    <option value="5">5 Guests</option>
+                                    <option value="6">6 Guests</option>
+                                    <option value="8">8 Guests (Large Gathering)</option>
+                                    <option value="10">10+ Guests (Private Area)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="res-date"><i class="fa-solid fa-calendar"></i> Date *</label>
+                                <input type="date" id="res-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="res-time"><i class="fa-solid fa-clock"></i> Time Slot *</label>
+                                <select id="res-time" required>
+                                    <option value="17:00">5:00 PM (Sunset Golden Hour)</option>
+                                    <option value="18:00">6:00 PM (Twilight Session)</option>
+                                    <option value="19:00">7:00 PM (Early Dinner)</option>
+                                    <option value="20:00" selected>8:00 PM (Prime Dinner)</option>
+                                    <option value="21:00">9:00 PM (Late Dinner)</option>
+                                    <option value="22:00">10:00 PM (Night Lounge)</option>
+                                    <option value="23:00">11:00 PM (Midnight Breeze)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="res-area"><i class="fa-solid fa-chair"></i> Seating Zone *</label>
+                                <select id="res-area" required>
+                                    <option value="Skyline Terrace Deck">Skyline Terrace Deck (Balcony Edge)</option>
+                                    <option value="Sunset Cabana VIP">Sunset Cabana VIP (Private Lounge)</option>
+                                    <option value="Greenhouse Pergola Lounge">Greenhouse Pergola Lounge</option>
+                                    <option value="Fireplace Cozy Corner">Fireplace Cozy Corner</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="res-occasion"><i class="fa-solid fa-cake-candles"></i> Occasion</label>
+                                <select id="res-occasion">
+                                    <option value="Casual Dining">Casual Dining / Evening Out</option>
+                                    <option value="Birthday Celebration">Birthday Celebration</option>
+                                    <option value="Anniversary Dinner">Anniversary Dinner</option>
+                                    <option value="Romantic Date Night">Romantic Date Night</option>
+                                    <option value="Corporate / Business">Corporate / Business Dinner</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="res-notes"><i class="fa-regular fa-comment-dots"></i> Special Dietary or Seating Notes</label>
+                            <textarea id="res-notes" rows="2" placeholder="e.g. High-chair needed, surprise birthday cake, window corner table..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 6px;">
+                            <i class="fa-solid fa-circle-check"></i> Complete Reservation
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VISUAL GALLERY SECTION -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag"><i class="fa-solid fa-camera"></i> Visual Vibes</span>
+                <h2 class="section-title">The Roof Yard Aesthetic</h2>
+                <p class="section-subtitle">A glimpse into our golden hour sunsets, starlit dining, and artisanal culinary presentations.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item gallery-wide">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80" alt="Roof Yard Night Ambiance">
+                    <div class="gallery-overlay">
+                        <span>Ambiance</span>
+                        <h4>Night Under Fairy Lights</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Prime Steak on Fire">
+                    <div class="gallery-overlay">
+                        <span>Open Flames</span>
+                        <h4>Charcoal Grilled Ribeye</h4>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-tall">
+                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80" alt="Artisanal Mocktail">
+                    <div class="gallery-overlay">
+                        <span>Crafted Drinks</span>
+                        <h4>Smoked Berry Sangria</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80" alt="Woodfired Artisan Pizza">
+                    <div class="gallery-overlay">
+                        <span>Woodfire Stone Oven</span>
+                        <h4>Truffle Burrata Pizza</h4>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-wide">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80" alt="Skyline Terrace Lounge">
+                    <div class="gallery-overlay">
+                        <span>Skyline Views</span>
+                        <h4>Golden Hour Balcony Deck</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS & TESTIMONIALS SECTION -->
+    <section class="reviews-section" id="reviews">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag"><i class="fa-solid fa-heart"></i> Diners Love Us</span>
+                <h2 class="section-title">Words From Our Guests</h2>
+                <p class="section-subtitle">Over 1,200 five-star experiences shared under our open rooftop sky.</p>
+            </div>
+
+            <!-- Dynamic Reviews Grid -->
+            <div class="reviews-grid" id="reviews-container-grid">
+                <!-- Rendered dynamically via js/app.js -->
+            </div>
+
+            <div class="review-action-wrap">
+                <button class="btn btn-secondary" onclick="RoofYardApp.openReviewModal()">
+                    <i class="fa-regular fa-star"></i> Leave Your Review
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT, HOURS & LOCATION SECTION -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag"><i class="fa-solid fa-location-dot"></i> Visit Our Rooftop</span>
+                <h2 class="section-title">Location & Contact</h2>
+                <p class="section-subtitle">We are perched high above the city skyline. Valet parking & direct private express elevator available.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info Box -->
+                <div class="contact-card-box">
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-map-pin"></i></div>
+                        <div class="info-details">
+                            <h4>Address</h4>
+                            <p>7th Floor Rooftop Terrace, Boulevard Skyview Tower, Gulberg III, Lahore.</p>
+                            <span style="font-size: 0.8rem; color: var(--gold-primary);"><i class="fa-solid fa-car"></i> Dedicated Valet Parking on Ground Level</span>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div class="info-details">
+                            <h4>Opening Hours</h4>
+                            <p><strong>Tuesday – Sunday:</strong> 4:30 PM – 2:00 AM</p>
+                            <p><strong>Monday:</strong> Closed for private culinary prep & maintenance</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                        <div class="info-details">
+                            <h4>Direct Hotline & Bookings</h4>
+                            <p><a href="tel:+923007663927">+92 300 ROOFYARD (+92 300 7663927)</a></p>
+                            <p><a href="mailto:reservations@roofyard.com">reservations@roofyard.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                        <div class="info-details">
+                            <h4>Instant WhatsApp Concierge</h4>
+                            <p>Need urgent event reservations or custom menu catering?</p>
+                            <a href="https://wa.me/923007663927" target="_blank" class="btn btn-secondary btn-sm" style="margin-top: 8px;">
+                                <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i> Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Styled Dark Map Visual -->
+                <div class="map-container">
+                    <div class="map-badge-overlay">
+                        <i class="fa-solid fa-location-crosshairs" style="color: var(--gold-primary);"></i>
+                        <span>Roof Yard Rooftop Penthouse, Skyview Tower</span>
+                    </div>
+                    <iframe 
+                        title="Roof Yard Location Map"
+                        src="https://maps.google.com/maps?q=Gulberg%20III%20Lahore&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="brand-logo" style="margin-bottom: 12px;">
+                        <div class="logo-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+                        <div class="logo-text">
+                            <span class="logo-title">Roof Yard</span>
+                            <span class="logo-tagline">Rooftop Dining & Lounge</span>
+                        </div>
+                    </div>
+                    <p>Elevating culinary moments under the stars. Woodfire pizzas, charcoal grills, botanical mocktails, and unforgettable skyline memories.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-link" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="social-link" title="Tripadvisor"><i class="fa-solid fa-hotel"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Our Story</a></li>
+                        <li><a href="#menu">Digital Menu</a></li>
+                        <li><a href="#reservation">Table Reservations</a></li>
+                        <li><a href="#gallery">Visual Gallery</a></li>
+                        <li><a href="#reviews">Guest Reviews</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Culinary Zones</h4>
+                    <ul class="footer-links">
+                        <li><a href="#reservation">Skyline Terrace Deck</a></li>
+                        <li><a href="#reservation">Sunset Cabana VIP</a></li>
+                        <li><a href="#reservation">Greenhouse Pergola Lounge</a></li>
+                        <li><a href="#reservation">Fireplace Cozy Corner</a></li>
+                        <li><a href="#menu">Private Event Catering</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>VIP Newsletter</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">Subscribe to receive secret tasting invitations, golden hour passes, and live music line-ups.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed to Roof Yard VIP Club!'); this.reset();">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary btn-sm"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; 2026 <strong>Roof Yard Restaurant & Lounge</strong>. All rights reserved. Designed with luxury aesthetic appeal.
+                </div>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <a href="admin.html" class="admin-portal-pill">
+                        <i class="fa-solid fa-shield-halved"></i> Management Admin Panel
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CART SLIDE-OUT DRAWER -->
+    <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header">
+            <h3><i class="fa-solid fa-basket-shopping" style="color: var(--gold-primary);"></i> Order Tray</h3>
+            <button class="cart-close-btn" id="cart-close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="cart-items-list" id="cart-items-container">
+            <!-- Rendered dynamically -->
+        </div>
+
+        <div class="cart-drawer-footer">
+            <div class="cart-subtotals">
+                <div class="cart-row">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">Rs. 0</span>
+                </div>
+                <div class="cart-row">
+                    <span>Service & Tax (10%):</span>
+                    <span id="cart-tax">Rs. 0</span>
+                </div>
+                <div class="cart-row total-row">
+                    <span>Grand Total:</span>
+                    <span id="cart-total">Rs. 0</span>
+                </div>
+            </div>
+            <button class="btn btn-primary" id="checkout-trigger-btn" style="width: 100%;">
+                <i class="fa-solid fa-paper-plane"></i> Proceed To Order
+            </button>
+        </div>
+    </div>
+
+    <!-- CHECKOUT ORDER MODAL -->
+    <div class="modal-overlay" id="checkout-modal">
+        <div class="modal-box">
+            <button class="modal-close" class="modal-close-trigger"><i class="fa-solid fa-xmark"></i></button>
+            <h3 style="font-size: 1.5rem; color: var(--gold-light); margin-bottom: 6px;">
+                <i class="fa-solid fa-utensils"></i> Complete Your Order
+            </h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">
+                Send your order instantly to the Roof Yard kitchen for preparation.
+            </p>
+
+            <div id="modal-checkout-summary"></div>
+
+            <form id="checkout-order-form" style="display: flex; flex-direction: column; gap: 14px;">
+                <div class="form-group">
+                    <label>Your Name *</label>
+                    <input type="text" id="order-cust-name" placeholder="Enter full name" required>
+                </div>
+                <div class="form-group">
+                    <label>WhatsApp / Phone Number *</label>
+                    <input type="tel" id="order-cust-phone" placeholder="e.g. +92 300 1234567" required>
+                </div>
+                <div class="form-group">
+                    <label>Order Type *</label>
+                    <select id="order-type-select">
+                        <option value="dine-in">Dine-in (At Rooftop Table)</option>
+                        <option value="takeaway">Takeaway (Pick-up Counter)</option>
+                        <option value="delivery">Direct Rooftop Delivery</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Table Number / Delivery Address</label>
+                    <input type="text" id="order-table-note" placeholder="e.g. Terrace Table #7 or Address">
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">
+                    <i class="fa-solid fa-check"></i> Send Order to Kitchen
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- RESERVATION SUCCESS MODAL -->
+    <div class="modal-overlay" id="reservation-success-modal">
+        <div class="modal-box text-center">
+            <button class="modal-close modal-close-trigger"><i class="fa-solid fa-xmark"></i></button>
+            <div style="width: 70px; height: 70px; border-radius: 50%; background: rgba(212, 175, 55, 0.15); border: 2px solid var(--gold-primary); display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; color: var(--gold-primary); font-size: 2rem;">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 style="font-size: 1.6rem; color: var(--gold-light); margin-bottom: 6px;">Reservation Received!</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">
+                Your booking request has been logged in our system.
+            </p>
+
+            <div style="background: rgba(255,255,255,0.04); border: 1px dashed var(--border-color); border-radius: 16px; padding: 18px; margin-bottom: 22px; text-align: left;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 10px;">
+                    <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Booking Reference</span>
+                    <span id="success-booking-id" style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: var(--gold-primary);">RY-8925</span>
+                </div>
+                <div id="success-booking-details" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;"></div>
+            </div>
+
+            <button class="btn btn-primary modal-close-trigger" style="width: 100%;">
+                <i class="fa-solid fa-thumbs-up"></i> Got It, Thank You!
+            </button>
+        </div>
+    </div>
+
+    <!-- SUBMIT REVIEW MODAL -->
+    <div class="modal-overlay" id="review-modal">
+        <div class="modal-box">
+            <button class="modal-close modal-close-trigger"><i class="fa-solid fa-xmark"></i></button>
+            <h3 style="font-size: 1.5rem; color: var(--gold-light); margin-bottom: 6px;">
+                <i class="fa-regular fa-star"></i> Share Your Experience
+            </h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">
+                Your feedback helps us refine the Roof Yard rooftop experience.
+            </p>
+
+            <form id="submit-review-form" style="display: flex; flex-direction: column; gap: 16px;">
+                <div class="form-group">
+                    <label>Your Name *</label>
+                    <input type="text" id="review-author-name" placeholder="e.g. Zainab Asad" required>
+                </div>
+                <div class="form-group">
+                    <label>Rating *</label>
+                    <select id="review-rating-val">
+                        <option value="5">★★★★★ (5 Stars - Exceptional)</option>
+                        <option value="4">★★★★☆ (4 Stars - Very Good)</option>
+                        <option value="3">★★★☆☆ (3 Stars - Average)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Review Description *</label>
+                    <textarea id="review-comment-text" rows="4" placeholder="How was the ambiance, taste of dishes, music and view?" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa-solid fa-paper-plane"></i> Publish Review
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- App Logic Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

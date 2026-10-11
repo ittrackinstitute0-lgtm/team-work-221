@@ -1,0 +1,151 @@
+/* ==========================================================================
+   ROOF YARD - RESPONSIVE STYLES
+   Mobile, Tablet, and Desktop Adaptive Layouts
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .hero-highlights {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .experience-images {
+        max-width: 550px;
+        margin: 0 auto;
+    }
+
+    .reservation-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .announcement-contacts {
+        display: none;
+    }
+
+    .nav-container {
+        height: 72px;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: #0d1118;
+        border-bottom: 1px solid var(--border-color);
+        flex-direction: column;
+        padding: 30px 24px;
+        gap: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        transform: translateY(-150%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+    }
+
+    .nav-actions .btn-sm {
+        display: none;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-highlights {
+        grid-template-columns: 1fr;
+        padding: 18px 20px;
+    }
+
+    .experience-features {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .offer-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 36px 24px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cart-drawer {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 220px;
+    }
+
+    .gallery-wide,
+    .gallery-tall {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .reservation-wrapper {
+        padding: 24px 16px;
+    }
+
+    .reservation-form-card {
+        padding: 20px 16px;
+    }
+
+    .seating-preview-grid {
+        grid-template-columns: 1fr;
+    }
+}
